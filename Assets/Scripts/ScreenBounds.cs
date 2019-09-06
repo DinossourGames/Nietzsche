@@ -16,12 +16,12 @@ public class ScreenBounds : MonoBehaviour
 
     private void LateUpdate()
     {
-        Repulsion();
-        var viewPos = transform.position;
-        viewPos.x = Mathf.Clamp(viewPos.x,
-            screenBounds.x * -1 + _objectWidth,
-            screenBounds.x - _objectWidth);
-        transform.position = viewPos;
+      //  Repulsion();
+//        var viewPos = transform.position;
+//        viewPos.x = Mathf.Clamp(viewPos.x,
+//            screenBounds.x * -1 + _objectWidth,
+//            screenBounds.x - _objectWidth);
+//        transform.position = viewPos;
     }
 
     private void Repulsion()
@@ -29,16 +29,16 @@ public class ScreenBounds : MonoBehaviour
         if (!(transform.position.x + _objectWidth > screenBounds.x) &&
             !(transform.position.x - _objectWidth < screenBounds.x * -1)) return;
 
-        var dir = _rigidbody2D.velocity * -1;
-        if (Player.HasTouched)
-        {
-            _rigidbody2D.velocity = dir * 1.6f;
-            Player.HasTouched = false;
-        }
-        else
-        {
-            _rigidbody2D.velocity = dir * .6f;
-            Player.HasTouched = false;
-        }
+        var dir = -_rigidbody2D.velocity;
+//        if (Player.HasTouched)
+//        {
+//            _rigidbody2D.AddForce(dir /2 );
+//            Player.HasTouched = false;
+//        }
+//        else
+//        {
+//            _rigidbody2D.velocity = dir * .6f;
+//            Player.HasTouched = false;
+//        }
     }
 }

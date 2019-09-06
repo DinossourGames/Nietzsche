@@ -6,8 +6,10 @@ public class Player : MonoBehaviour
 {
     private Rigidbody2D _rigidbody2D;
     [SerializeField] private float speed;
+    [SerializeField] private float maxSpeed;
     [SerializeField] private SpriteRenderer _spriteRenderer;
 
+    public static bool HasTouched;
     private Vector2 _size;
 
     void Start()
@@ -18,6 +20,14 @@ public class Player : MonoBehaviour
     }
 
     private void Update()
+    {
+        if (Mathf.Abs(_rigidbody2D.velocity.x) > speed)
+        {
+            _rigidbody2D.velocity /= 2;
+        }
+    }
+
+    private void FixedUpdate()
     {
         BallTouch();
     }
@@ -38,7 +48,8 @@ public class Player : MonoBehaviour
 
             if (touch.phase == TouchPhase.Ended)
             {
-                _rigidbody2D.velocity = -direction * speed * Time.deltaTime;
+                _rigidbody2D.velocity = -direction * speed;
+                HasTouched = true;
             }
         }
     }

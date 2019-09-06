@@ -18,8 +18,8 @@ public class ScreenBounds : MonoBehaviour
     {
         Repulsion();
         var viewPos = transform.position;
-        viewPos.x = Mathf.Clamp(viewPos.x, 
-            screenBounds.x * -1 + _objectWidth, 
+        viewPos.x = Mathf.Clamp(viewPos.x,
+            screenBounds.x * -1 + _objectWidth,
             screenBounds.x - _objectWidth);
         transform.position = viewPos;
     }
@@ -30,6 +30,15 @@ public class ScreenBounds : MonoBehaviour
             !(transform.position.x - _objectWidth < screenBounds.x * -1)) return;
 
         var dir = _rigidbody2D.velocity * -1;
-        _rigidbody2D.velocity = dir * 2 * Time.deltaTime;
+        if (Player.HasTouched)
+        {
+            _rigidbody2D.velocity = dir * 1.6f;
+            Player.HasTouched = false;
+        }
+        else
+        {
+            _rigidbody2D.velocity = dir * .6f;
+            Player.HasTouched = false;
+        }
     }
 }

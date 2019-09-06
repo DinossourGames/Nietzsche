@@ -25,6 +25,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/SwipeDetector.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/VectorPhisics2D.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ScreenBounds.cs" />
       </list>
@@ -80,7 +81,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1567734016393</updated>
-      <workItem from="1567734020266" duration="8444000" />
+      <workItem from="1567734020266" duration="10018000" />
     </task>
     <servers />
   </component>
@@ -102,6 +103,10 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="943" y="227" width="1344" height="678" key="search.everywhere.popup" />
+    <state x="943" y="227" width="1344" height="678" key="search.everywhere.popup/2560.1080" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

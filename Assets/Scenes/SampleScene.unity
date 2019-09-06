@@ -235,9 +235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61e4a455b6b785f489db5031b83008e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCamera: {fileID: 519420031}
   screenBounds: {x: 0, y: 0}
-  speed: 12
 --- !u!212 &677046340
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -334,7 +332,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 271d43d0cddc16e408f22b8030e0878c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
+  speed: 400
+  _spriteRenderer: {fileID: 0}
 --- !u!1 &692368583
 GameObject:
   m_ObjectHideFlags: 0

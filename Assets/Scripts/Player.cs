@@ -19,15 +19,26 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        BallTouch();
+    }
+
+    private void BallTouch()
+    {
         foreach (var touch in Input.touches)
         {
             Vector2 poz = Camera.main.ScreenToWorldPoint(touch.position);
+            var origin = transform.position;
 
-            if (poz.x > transform.position.x - _size.x && poz.x < transform.position.x + _size.x &&
-                poz.y > transform.position.y - _size.y && poz.y < transform.position.y + _size.y)
+            if (!(poz.x > origin.x - _size.x) || !(poz.x < origin.x + _size.x) ||
+                !(poz.y > origin.y - _size.y) || !(poz.y < origin.y + _size.y)) continue;
+            
+            var x = poz.x - origin.x;
+            var y = poz.y - origin.y;
+            var direction = new Vector2(x, y);
+
+            if (touch.phase == TouchPhase.Ended)
             {
-                if (touch.phase == TouchPhase.Ended)
-                    Debug.Log("Hit");
+                _rigidbody2D.velocity = -direction * speed * Time.deltaTime;
             }
         }
     }
